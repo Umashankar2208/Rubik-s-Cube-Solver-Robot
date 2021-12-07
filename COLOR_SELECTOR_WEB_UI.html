@@ -1,0 +1,397 @@
+$ npm i -s csv-writer
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>RUBIK'S CUBE</title>
+<style>
+	body{
+		background-color: black;
+		margin: 0%;
+		overflow: hidden;
+	}
+	h1{
+		text-align: center;
+		font-family: "Consolas";
+		font-size: 50px;
+		color: white;
+	}
+	#div1{
+		background-color: lightpink;
+		width: auto;
+		overflow: hidden;
+		padding: 10px;
+		float: left;
+		margin-left: 20px;
+	}
+	#div2{
+		background-color: black;
+		width: auto;
+		height: 50px;
+		overflow: hidden;
+		padding: 10px 10px;
+		float: left;
+		margin-left: 170px;
+		margin-top: auto;
+	}
+	#face{
+		text-align: center;
+		font-family: "Consolas";
+		font-size: 40px;
+		margin: 0px;
+		margin-top: 10px;
+		color: aliceblue;
+	}
+	#div3{
+		background-color: black;
+		width: auto;
+		overflow: hidden;
+		padding: 15px 35px;
+		float: left;
+		margin-left: 45px;
+		margin-top: auto;
+	}
+	.emptycell{
+	background-color: gray;
+	padding: 40px;
+	margin: 20px;
+	cursor: pointer;
+	float: left;
+	}
+	#div4{
+		background-color: lightgreen;
+		width: auto;
+		overflow: hidden;
+		padding: 20px 40px;
+		float: left;
+		margin-left: 190px;
+		margin-top: auto;
+		cursor: pointer;
+	}
+	#div4:hover{
+		background-color: aquamarine;
+	}
+	#nextface{
+		text-align: center;
+		font-family: "Consolas";
+		font-size: 20px;
+		color: black;
+		margin: 0px;
+	}
+
+</style>
+</head>
+
+<body>
+	<h1>RUBIK'S CUBE</h1>
+	<div id="div1">
+		<img src="http://192.168.1.22:8080/video" width="979" height="550">
+	</div>
+	<div id="div2">
+		<p id="face">Face - 1</p>
+	</div>
+	<div id="div3">
+		<div class="emptycell" id="tile1" onclick="get1()"></div>
+		<div class="emptycell" id="tile2" onclick="get2()"></div>
+		<div class="emptycell" id="tile3" onclick="get3()"></div>
+		<br>
+		<div class="emptycell" id="tile4" onclick="get4()"></div>
+		<div class="emptycell" id="tile5" onclick="get5()"></div>
+		<div class="emptycell" id="tile6" onclick="get6()"></div>
+		<br>
+		<div class="emptycell" id="tile7" onclick="get7()"></div>
+		<div class="emptycell" id="tile8" onclick="get8()"></div>
+		<div class="emptycell" id="tile9" onclick="get9()"></div>
+	</div>
+	<div id="div4">
+		<p id="nextface">Next</p>
+	</div>
+
+
+	<script>
+			var count1 = 0;
+			function get1(){
+				count1++;
+				count1 = count1%10;
+				count1 = parseInt(count1);
+				if(count1 == 1){
+					document.getElementById("tile1").style.backgroundColor = "red";
+				}
+				if(count1 == 2){
+					document.getElementById("tile1").style.backgroundColor = "yellow";
+				}
+				if(count1 == 3){
+					document.getElementById("tile1").style.backgroundColor = "white";
+				}
+				if(count1 == 4){
+					document.getElementById("tile1").style.backgroundColor = "blue";
+				}
+				if(count1 == 5){
+					document.getElementById("tile1").style.backgroundColor = "orange";
+				}
+				if(count1 == 6){
+					document.getElementById("tile1").style.backgroundColor = "green";
+					count1 = count1 + 4
+				}	
+				count1 = count1%10;
+				count1 = parseInt(count1);
+			}
+			var count2 = 0;
+			function get2(){
+				count2++;
+				count2 = count2%10;
+				count2 = parseInt(count2);
+				if(count2 == 1){
+					document.getElementById("tile2").style.backgroundColor = "red";
+				}
+				if(count2 == 2){
+					document.getElementById("tile2").style.backgroundColor = "yellow";
+				}
+				if(count2 == 3){
+					document.getElementById("tile2").style.backgroundColor = "white";
+				}
+				if(count2 == 4){
+					document.getElementById("tile2").style.backgroundColor = "blue";
+				}
+				if(count2 == 5){
+					document.getElementById("tile2").style.backgroundColor = "orange";
+				}
+				if(count2 == 6){
+					document.getElementById("tile2").style.backgroundColor = "green";
+					count2 = count2 + 4
+				}	
+				count2 = count2%10;
+				count2 = parseInt(count2);
+			}
+
+			var count3 = 0;
+			function get3(){
+				count3++;
+				count3 = count3%10;
+				count3 = parseInt(count3);
+				if(count3 == 1){
+					document.getElementById("tile3").style.backgroundColor = "red";
+				}
+				if(count3 == 2){
+					document.getElementById("tile3").style.backgroundColor = "yellow";
+				}
+				if(count3 == 3){
+					document.getElementById("tile3").style.backgroundColor = "white";
+				}
+				if(count3 == 4){
+					document.getElementById("tile3").style.backgroundColor = "blue";
+				}
+				if(count3 == 5){
+					document.getElementById("tile3").style.backgroundColor = "orange";
+				}
+				if(count3 == 6){
+					document.getElementById("tile3").style.backgroundColor = "green";
+					count3 = count3 + 4
+				}
+				count3 = count3%10;
+				count3 = parseInt(count3);	
+			}
+
+			var count4 = 0;
+			function get4(){
+				count4++;
+				count4 = count4%10;
+				count4 = parseInt(count4);
+				if(count4 == 1){
+					document.getElementById("tile4").style.backgroundColor = "red";
+				}
+				if(count4 == 2){
+					document.getElementById("tile4").style.backgroundColor = "yellow";
+				}
+				if(count4 == 3){
+					document.getElementById("tile4").style.backgroundColor = "white";
+				}
+				if(count4 == 4){
+					document.getElementById("tile4").style.backgroundColor = "blue";
+				}
+				if(count4 == 5){
+					document.getElementById("tile4").style.backgroundColor = "orange";
+				}
+				if(count4 == 6){
+					document.getElementById("tile4").style.backgroundColor = "green";
+					count4 = count4 + 4
+				}
+				count4 = count4%10;
+				count4 = parseInt(count4);	
+			}
+
+			var count5 = 0;
+			function get5(){
+				count5++;
+				count5 = count5%10;
+				count5 = parseInt(count5);
+				if(count5 == 1){
+					document.getElementById("tile5").style.backgroundColor = "red";
+				}
+				if(count5 == 2){
+					document.getElementById("tile5").style.backgroundColor = "yellow";
+				}
+				if(count5 == 3){
+					document.getElementById("tile5").style.backgroundColor = "white";
+				}
+				if(count5 == 4){
+					document.getElementById("tile5").style.backgroundColor = "blue";
+				}
+				if(count5 == 5){
+					document.getElementById("tile5").style.backgroundColor = "orange";
+				}
+				if(count5 == 6){
+					document.getElementById("tile5").style.backgroundColor = "green";
+					count5 = count5 + 4
+				}	
+				count5 = count5%10;
+				count5 = parseInt(count5);
+			}
+
+			var count6 = 0;
+			function get6(){
+				count6++;
+				count6 = count6%10;
+				count6 = parseInt(count6);
+				if(count6 == 1){
+					document.getElementById("tile6").style.backgroundColor = "red";
+				}
+				if(count6 == 2){
+					document.getElementById("tile6").style.backgroundColor = "yellow";
+				}
+				if(count6 == 3){
+					document.getElementById("tile6").style.backgroundColor = "white";
+				}
+				if(count6 == 4){
+					document.getElementById("tile6").style.backgroundColor = "blue";
+				}
+				if(count6 == 5){
+					document.getElementById("tile6").style.backgroundColor = "orange";
+				}
+				if(count6 == 6){
+					document.getElementById("tile6").style.backgroundColor = "green";
+					count6 = count6 + 4
+				}	
+				count6 = count6%10;
+				count6 = parseInt(count6);
+			}
+
+			var count7 = 0;
+			function get7(){
+				count7++;
+				count7 = count7%10;
+				count7 = parseInt(count7);
+				if(count7 == 1){
+					document.getElementById("tile7").style.backgroundColor = "red";
+				}
+				if(count7 == 2){
+					document.getElementById("tile7").style.backgroundColor = "yellow";
+				}
+				if(count7 == 3){
+					document.getElementById("tile7").style.backgroundColor = "white";
+				}
+				if(count7 == 4){
+					document.getElementById("tile7").style.backgroundColor = "blue";
+				}
+				if(count7 == 5){
+					document.getElementById("tile7").style.backgroundColor = "orange";
+				}
+				if(count7 == 6){
+					document.getElementById("tile7").style.backgroundColor = "green";
+					count7 = count7 + 4
+				}
+				count7 = count7%10;
+				count7 = parseInt(count7);	
+			}
+
+			var count8 = 0;
+			function get8(){
+				count8++;
+				count8 = count8%10;
+				count8 = parseInt(count8);
+				if(count8 == 1){
+					document.getElementById("tile8").style.backgroundColor = "red";
+				}
+				if(count8 == 2){
+					document.getElementById("tile8").style.backgroundColor = "yellow";
+				}
+				if(count8 == 3){
+					document.getElementById("tile8").style.backgroundColor = "white";
+				}
+				if(count8 == 4){
+					document.getElementById("tile8").style.backgroundColor = "blue";
+				}
+				if(count8 == 5){
+					document.getElementById("tile8").style.backgroundColor = "orange";
+				}
+				if(count8 == 6){
+					document.getElementById("tile8").style.backgroundColor = "green";
+					count8 = count8 + 4
+				}	
+				count8 = count8%10;
+				count8 = parseInt(count8);
+			}
+
+			var count9 = 0;
+			function get9(){
+				count9++;
+				count9 = count9%10;
+				count9 = parseInt(count9);
+				if(count9 == 1){
+					document.getElementById("tile9").style.backgroundColor = "red";
+				}
+				if(count9 == 2){
+					document.getElementById("tile9").style.backgroundColor = "yellow";
+				}
+				if(count9 == 3){
+					document.getElementById("tile9").style.backgroundColor = "white";
+				}
+				if(count9 == 4){
+					document.getElementById("tile9").style.backgroundColor = "blue";
+				}
+				if(count9 == 5){
+					document.getElementById("tile9").style.backgroundColor = "orange";
+				}
+				if(count9 == 6){
+					document.getElementById("tile9").style.backgroundColor = "green";
+					count9 = count9 + 4
+				}
+				count9 = count9%10;
+				count9 = parseInt(count9);	
+			}	
+
+			var textToSave = "";
+			call_count = 0;
+			function download() {
+				textToSave = textToSave.concat(count1,count2,count3,count4,count5,count6,count7,count8,count9);
+				call_count++;
+				if(call_count <= 6){			
+				document.getElementById("tile1").style.backgroundColor = "gray";
+				document.getElementById("tile2").style.backgroundColor = "gray";
+				document.getElementById("tile3").style.backgroundColor = "gray";
+				document.getElementById("tile4").style.backgroundColor = "gray";
+				document.getElementById("tile5").style.backgroundColor = "gray";
+				document.getElementById("tile6").style.backgroundColor = "gray";
+				document.getElementById("tile7").style.backgroundColor = "gray";
+				document.getElementById("tile8").style.backgroundColor = "gray";
+				document.getElementById("tile9").style.backgroundColor = "gray";
+				count1 = count2 = count3 = count4 = count5 = count6 = count7 = count8 = count9 = 0;
+				document.getElementById("face").innerHTML = "Face - "+ (call_count+1);
+				if(call_count==6){
+					document.getElementById("face").innerHTML = "";
+					var hiddenElement = document.createElement('a');
+					hiddenElement.href = 'data:attachment/text,' + encodeURI(textToSave);
+					hiddenElement.target = '_blank';
+					hiddenElement.download = 'color_codes.txt';
+					hiddenElement.click();
+				}
+				}				
+				}
+				
+			document.getElementById('div4').addEventListener('click', download);
+			
+	</script>
+	
+</body>
+</html>
+
